@@ -13,16 +13,16 @@
     <div id="content" class="col vh-100">
         <div class="row">
             <div id="middle" class="col-sm-7">
-                <h1>{{ site.data.petstore.info.title }} <span style="color: #6C757D; font-size: 80%;">v{{ site.data.petstore.info.version }}</span></h1>
+                <h1>{{ site.data.meme_generator.info.title }} <span class="api-version-title">v{{ site.data.meme_generator.info.version }}</span></h1>
                 <ul>
-                    {% for server in site.data.petstore.servers %}
+                    {% for server in site.data.meme_generator.servers %}
                     <li>
-                        {{ server.url }} ({{ server.description }})
+                        <span class="server-url">{{ server.url }}</span> [{{ server.description }}]
                     </li>
                     {% endfor %}
                 </ul>
-                <p class="fw-lighter">{{ site.data.petstore.servers.url }}</p>
-                <p>{{ site.data.petstore.info.description | markdownify }}</p>
+                <p class="fw-lighter">{{ site.data.meme_generator.servers.url }}</p>
+                <p>{{ site.data.meme_generator.info.description | markdownify }}</p>
                 <hr />
             </div>
             <div id="sidebar" class="col">
@@ -31,47 +31,42 @@
         </div>
         <div class="row">
             <div id="middle" class="col-sm-7">
-                <h2>Endpoints</h2>
-                {% for endpoint in site.data.petstore.paths %}
-                <h3>{{ endpoint[0] }}</h3>
-                <p><b>Parameters:</b></p>
-                <table class="table table-striped table-bordered table-hover">
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Where</th>
-                            <th>Description</th>
-                            <th>Example</th>
-                            <th>Required?</th>
-                            <th>Type</th>
-                            <th>Default</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {% for parameter in endpoint[1].parameters -%}
-                        {%- if forloop.length > 0 -%}
-                        <tr>
-                            <td>{{ parameter.name }}</td>
-                            <td>{{ parameter.in }}</td>
-                            <td>{{ parameter.description | markdownify }}</td>
-                            {%- if parameter.example -%}
-                            <td>{{ parameter.example }}</td>
-                            {%- else -%}
-                            <td style="text-align: center;">-</td>
-                            {%- endif -%}
-                            <td>{{ parameter.required }}</td>
-                            <td>{{ parameter.schema.type }}</td>
-                            {%- if parameter.schema.default -%}
-                            <td>{{ parameter.schema.default }}</td>
-                            {%- else -%}
-                            <td style="text-align: center;">-</td>
-                            {%- endif -%}
-                        </tr>
-                        {%- endif -%}
-                        {% endfor %}
-                    </tbody>
-                </table>
-                <hr />
+                {% for endpoint in site.data.meme_generator.paths %}
+                    <h2>{{ endpoint[0] }}</h2>
+                    {% for method in endpoint[1] %}
+                        <p><b>{{ method[0] | upcase }}</b> {{ endpoint[0] }}</p>
+                        <p>{{ method[1].description | markdownify  }}</p>
+                        {% if method[1].requestBody %}
+                            <p><b>Request body</b></p>
+                            {% for content in method[1].requestBody.content %}
+                                <p><b>Content-Type:</b> <code>{{ content[0] }}</code></p>
+                                <p><b>Parameters:</b></p>
+                                    <table class="table table-striped table-bordered table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Description</th>
+                                            <th>Required?</th>
+                                            <th>Type</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for param in content[1].schema %}
+                                        <tr>
+                                            <td><code>{{ param[0] }}</code></td>
+                                            <td>{{ param[1].description | markdownify }}</td>
+                                            <td>{{ param[1].required }}</td>
+                                            <td>{{ param[1].type }}</td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            {% endfor %}
+                        {% else %}
+                            <p>This method doesn't have any parameters or a request body.</p>
+                        {% endif %}
+                    {% endfor %}
+                    <hr />
                 {% endfor %}
             </div>
             <div id="sidebar" class="col">
