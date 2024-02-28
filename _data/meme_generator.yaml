@@ -65,11 +65,28 @@ paths:
                             example: 2
         default:
           description: Unexpected error
+    post:
+      description: |
+        This is a **fake** method for testing the API documentation parser. This API does NOT have a `POST` method.
+      requestBody:
+        description: This is a **fake** body request. It does not exist in this API.
+        required: true
+        content:
+          application/json:
+            schema:
+              bogus_1:
+                description: This is a **fake** body parameter. It does not exist in this API.
+                required: true
+                type: string
+              bogus_2:
+                description: This is another **fake** body parameter. It does not exist in this API.
+                required: false
+                type: string
 
   /caption_image:
     post:
       description: |
-        Add a caption to an Imgflip meme template. Images created with this API will be publicly accessible by anyone through the url in the response - there is no "private" option. This does not mean these memes will be posted publicly though, one still needs to know the exact URL to find the image. If the image hangs around on Imgflip servers for a while and gets very few views (direct image views and image page views both count), it will be auto-deleted to save space.
+        Adds a caption to an Imgflip meme template. Images created with this API will be publicly accessible by anyone through the url in the response - there is no "private" option. This does not mean these memes will be posted publicly though, one still needs to know the exact URL to find the image. If the image hangs around on Imgflip servers for a while and gets very few views (direct image views and image page views both count), it will be auto-deleted to save space.
         
         For a real working example of the API, check out this hubot script (written in coffeescript). That script is open source, so feel free to use that set of regexes as a starting place.
         
@@ -85,11 +102,11 @@ paths:
                 required: true
                 type: string
               username:
-                description: username of a valid imgflip account. This is used to track where API requests are coming from.
+                description: Username of a valid imgflip account. This is used to track where API requests are coming from.
                 required: true
                 type: string
               password:
-                description: password for the imgflip account. As always, make sure password (and all the other parameters) are in the body of the POST request, not in the request url.
+                description: Password for the imgflip account. As always, make sure password (and all the other parameters) are in the body of the POST request, not in the request url.
                 required: true
                 type: string
               text0:
