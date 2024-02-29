@@ -69,19 +69,19 @@ paths:
           description: Unexpected error
     post:
       description: |
-        This is a **fake** method for testing the API documentation parser. This API does NOT have a `POST` method.
+        This is a **fake** method for testing endpoints with multiple methods. This API does **not** have a `POST` method.
       requestBody:
-        description: This is a **fake** body request. It does not exist in this API.
+        description: This is a **fake** body request. It does **not** exist in this API.
         required: true
         content:
           application/json:
             schema:
               bogus_1:
-                description: This is a **fake** body parameter. It does not exist in this API.
+                description: This is a **fake** body parameter. It does **not** exist in this API.
                 required: true
                 type: string
               bogus_2:
-                description: This is another **fake** body parameter. It does not exist in this API.
+                description: This is another **fake** body parameter. It does **not** exist in this API.
                 required: false
                 type: string
 
