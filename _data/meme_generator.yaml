@@ -12,6 +12,8 @@ info:
 servers:
   - url: https://api.imgflip.com
     description: Default server
+  - url: https://apitest.imgflip.com
+    description: Test server (this one is fake)
 
 security:
   - BasicAuth: [] # use the same name as under #/securitySchemes
