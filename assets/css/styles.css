@@ -4,16 +4,28 @@
     font-family: "Roboto", sans-serif;
     font-weight: 400;
     font-style: normal;
-    font-size: 15px;
+}
+
+h1 {
+    font-size: 28pt;
+    margin-bottom: 30px;
+}
+
+h2 {
+font-size: 22pt;
+}
+
+h3 {
+    font-size: 14pt;
 }
 
 p {
-    line-height: 2em;
+    line-height: 1.8em;
+    font-size: 11pt;
 }
 
-h2,
-h3 {
-    padding-top: 25px;
+li {
+    line-height: 1.8em;
 }
 
 #toc {
@@ -50,4 +62,48 @@ h3 {
 
 .server-url {
     font-weight: bold;
+}
+
+.method-name-box {
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 11pt;
+    font-weight: bold;
+    color: #fff;
+}
+
+.method-name-get {
+    background-color: #337AB7;
+}
+
+.method-name-post {
+    background-color: #5CB85C;
+}
+
+.method-name-delete {
+    background-color: #D9534F;
+}
+
+.method-name-put {
+    background-color: #F0AD4E;
+}
+
+.method-endpoint {
+    font-weight: normal;
+    color: #333333;
+}
+
+p.request-body {
+    display: flex;
+    flex-direction: row;
+    font-size: 9pt;
+    color: #727272;
+}
+
+p.request-body:before,
+p.request-body:after {
+    content: "";
+    flex: 1 1;
+    border-bottom: 1px solid #e7e7e7;
+    margin: auto;
 }

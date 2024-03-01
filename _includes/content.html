@@ -14,6 +14,8 @@
         <div class="row">
             <div id="middle" class="col-sm-7">
                 <h1>{{ site.data.meme_generator.info.title }} <span class="api-version-title">v{{ site.data.meme_generator.info.version }}</span></h1>
+                <p>{{ site.data.meme_generator.info.description | markdownify }}</p>
+                <h2>Servers</h2>
                 <ul>
                     {% for server in site.data.meme_generator.servers %}
                     <li>
@@ -21,8 +23,6 @@
                     </li>
                     {% endfor %}
                 </ul>
-                <p class="fw-lighter">{{ site.data.meme_generator.servers.url }}</p>
-                <p>{{ site.data.meme_generator.info.description | markdownify }}</p>
             </div>
             <div id="sidebar" class="col">
                 <p>...</p>
@@ -40,12 +40,20 @@
             {% for method in endpoint[1] %}
                 <div class="row">
                     <div id="middle" class="col-sm-7">
-                        <p><b>{{ method[0] | upcase }}</b> {{ endpoint[0] }}</p>
+                        {% if method[0] contains "get" %}
+                            <h3><span class="method-name-box method-name-get">{{ method[0] | upcase }}</span> <span class="method-endpoint">{{ endpoint[0] }}</span></h3>
+                        {% elsif method[0] contains "post" %}
+                            <h3><span class="method-name-box method-name-post">{{ method[0] | upcase }}</span> <span class="method-endpoint">{{ endpoint[0] }}</span></h3>
+                        {% elsif method[0] contains "delete" %}
+                            <h3><span class="method-name-box method-name-delete">{{ method[0] | upcase }}</span> <span class="method-endpoint">{{ endpoint[0] }}</span></h3>
+                        {% elsif method[0] contains "put" %}
+                            <h3><span class="method-name-box method-name-put">{{ method[0] | upcase }}</span> <span class="method-endpoint">{{ endpoint[0] }}</span></h3>
+                        {% endif %}
                         <p>{{ method[1].description | markdownify  }}</p>
                         {% if method[1].requestBody %}
-                            <h3>Request body</h3>
+                            <p class="request-body">REQUEST BODY</p>
                             {% for content in method[1].requestBody.content %}
-                                <p><b>Content-Type:</b> <code>{{ content[0] }}</code></p>
+                                <p>Content-Type: <code>{{ content[0] }}</code></p>
                                 <table class="table table-striped table-bordered table-hover">
                                 <thead>
                                     <tr>
