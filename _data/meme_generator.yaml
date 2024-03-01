@@ -7,8 +7,6 @@ info:
 
     The base version of the API is free. You can upgrade to our Premium API to unlock advanced features. Requests to the free version of the API do not have a hard limit, but may be throttled or blocked if you start doing crazy things or abusing the API. The Premium API has a base cost of $9.99 per month and includes some Premium requests each month (details below). After that, each type of Premium request has a small per-request cost. Note that the free API endpoints are still free if you have API Premium, you'll only be charged for the Premium-only features.
 
-    Feel free to contact us at general@imgflip.com with any questions or suggestions. 
-
 servers:
   - url: https://api.imgflip.com
     description: Default server

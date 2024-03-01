@@ -12,7 +12,7 @@ h1 {
 }
 
 h2 {
-font-size: 22pt;
+    font-size: 22pt;
 }
 
 h3 {
@@ -64,6 +64,22 @@ li {
     font-weight: bold;
 }
 
+#contact-info,
+#contact-info td {
+    border: none;
+    padding: 10px;
+    font-size: 11pt;
+}
+
+#contact-info th {
+    padding-right: 50px;
+    font-weight: bold;
+}
+
+#contact-info a {
+    color: #fff;
+}
+
 .method-name-box {
     padding: 5px;
     border-radius: 5px;
@@ -98,6 +114,7 @@ p.request-body {
     flex-direction: row;
     font-size: 9pt;
     color: #727272;
+    width: 35%;
 }
 
 p.request-body:before,
