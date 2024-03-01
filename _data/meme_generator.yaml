@@ -22,13 +22,13 @@ paths:
       description: Gets an array of popular memes that may be captioned with this API. The size of this array and the order of memes may change at any time. When this description was written, it returned 100 memes ordered by how many times they were captioned in the last 30 days. Additional properties other than those listed below may be added in the future without warning, so do not assume the JSON structure of each meme will never have new properties.
       responses:
         "200":
-          description: OK - The request was successfull.
+          description: OK - The request was successful.
           content:
             application/json:
               schema:
                 success:
                   type: boolean
-                  description: Returns `true` when the request is successfull.
+                  description: Returns `true` when the request is successful.
                 data:
                   type: object
                   description: Returns an object containing `memes`, which is the array of the popuplar memes.
@@ -169,13 +169,13 @@ paths:
                       example: "#000000"
       responses:
         "200":
-          description: OK - The request was successfull.
+          description: OK - The request was successful.
           content:
             application/json:
               schema:
                 success:
                   type: boolean
-                  description: Returns `true` when the request is successfull.
+                  description: Returns `true` when the request is successful.
                 data:
                   type: object
                   description: |
