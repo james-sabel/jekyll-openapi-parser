@@ -78,9 +78,18 @@
                         {% else %}
                             <p>This method doesn't have any parameters or a request body.</p>
                         {% endif %}
-                        </div>
+                    </div>
                     <div id="sidebar" class="col">
-                        <p>...</p>
+                        <h3>Responses</h3>
+                        {% for code in method[1].responses %}
+                            <p style="margin-top: 10px;">{{ code[0] }} | {{ code[1].description }}</p>
+                            {% for type in code[1].content %}
+                                <p>Model:</p>
+                                <div id="response-content">
+                                    <p>{{ type[1].model | markdownify }}</p>
+                                </div>
+                            {% endfor %}
+                        {% endfor %}
                     </div>
                 </div>
                 {% include section_divider.html %}
