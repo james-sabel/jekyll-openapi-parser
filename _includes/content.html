@@ -28,13 +28,13 @@
                 {% include contact_info.html %}
             </div>
         </div>
-        {% include section_divider.html %}
+        <span class="d-none d-lg-block">{% include section_divider.html %}</span>
         {% for endpoint in site.data.meme_generator.paths %}
             <div class="row">
                 <div id="middle" class="col-sm-7">
                     <h2>{{ endpoint[0] }}</h2>
                 </div>
-                <div id="sidebar" class="col">
+                <div id="sidebar" class="col d-none d-lg-block">
                 </div>
             </div>
             {% for method in endpoint[1] %}
@@ -92,7 +92,7 @@
                         {% endfor %}
                     </div>
                 </div>
-                {% include section_divider.html %}
+                <span class="d-none d-lg-block">{% include section_divider.html %}</span>
             {% endfor %}
         {% endfor %}
     </div>
