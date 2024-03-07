@@ -101,61 +101,6 @@ paths:
                   "error_message": string
                 }
                 ```
-    post:
-      description: |
-        This is a **fake** method for testing endpoints with multiple methods. This API does **not** have a `POST` method.
-      requestBody:
-        description: This is a **fake** body request. It does **not** exist in this API.
-        required: true
-        content:
-          application/json:
-            schema:
-              bogus_1:
-                description: This is a **fake** body parameter. It does **not** exist in this API.
-                required: true
-                type: string
-                example: "Hey, I'm a fake parameter!"
-              bogus_2:
-                description: This is another **fake** body parameter. It does **not** exist in this API.
-                required: false
-                type: string
-                example: "Hey, I'm a fake parameter too!"
-      responses:
-        "200":
-          description: OK - The request was successful.
-          content:
-            application/json:
-              schema:
-                success:
-                type: boolean
-                description: Returns `true` when the request is successful.
-                example: true
-              model: |
-                ```json
-                {
-                  "success": boolean
-                }
-                ```
-        "default":
-          description: An error ocurred
-          content:
-            application/json:
-              schema:
-                success:
-                  type: boolean
-                  description: Will return `false` when there are any errors in the request.
-                  example: false
-                error_message:
-                  type: string
-                  description: Some hopefully-useful statement about why it failed.
-                  example: "There are parameters missing in the request body."
-              model: |
-                ```json
-                {
-                  "success": boolean,
-                  "error_message": string
-                }
-                ```
 
   /caption_image:
     post:
@@ -280,6 +225,116 @@ paths:
                     "url": "string",
                     "page_url": "string"
                   }
+                }
+                ```
+        "default":
+          description: An error ocurred
+          content:
+            application/json:
+              schema:
+                success:
+                  type: boolean
+                  description: Will return `false` when there are any errors in the request.
+                  example: false
+                error_message:
+                  type: string
+                  description: Some hopefully-useful statement about why it failed.
+                  example: "There are parameters missing in the request body."
+              model: |
+                ```json
+                {
+                  "success": boolean,
+                  "error_message": string
+                }
+                ```
+    delete:
+      description: |
+        This is a **fake** method for testing endpoints with multiple methods. This API does **not** have a `DELETE` method.
+      requestBody:
+        description: This is a **fake** body request. It does **not** exist in this API.
+        required: true
+        content:
+          application/json:
+            schema:
+              bogus_1:
+                description: This is a **fake** body parameter. It does **not** exist in this API.
+                required: true
+                type: string
+                example: "Hey, I'm a fake parameter!"
+              bogus_2:
+                description: This is another **fake** body parameter. It does **not** exist in this API.
+                required: false
+                type: string
+                example: "Hey, I'm a fake parameter too!"
+      responses:
+        "200":
+          description: OK - The request was successful.
+          content:
+            application/json:
+              schema:
+                success:
+                type: boolean
+                description: Returns `true` when the request is successful.
+                example: true
+              model: |
+                ```json
+                {
+                  "success": boolean
+                }
+                ```
+        "default":
+          description: An error ocurred
+          content:
+            application/json:
+              schema:
+                success:
+                  type: boolean
+                  description: Will return `false` when there are any errors in the request.
+                  example: false
+                error_message:
+                  type: string
+                  description: Some hopefully-useful statement about why it failed.
+                  example: "There are parameters missing in the request body."
+              model: |
+                ```json
+                {
+                  "success": boolean,
+                  "error_message": string
+                }
+                ```
+    put:
+      description: |
+        This is a **fake** method for testing endpoints with multiple methods. This API does **not** have a `PUT` method.
+      requestBody:
+        description: This is a **fake** body request. It does **not** exist in this API.
+        required: true
+        content:
+          application/json:
+            schema:
+              bogus_1:
+                description: This is a **fake** body parameter. It does **not** exist in this API.
+                required: true
+                type: string
+                example: "Hey, I'm a fake parameter!"
+              bogus_2:
+                description: This is another **fake** body parameter. It does **not** exist in this API.
+                required: false
+                type: string
+                example: "Hey, I'm a fake parameter too!"
+      responses:
+        "200":
+          description: OK - The request was successful.
+          content:
+            application/json:
+              schema:
+                success:
+                type: boolean
+                description: Returns `true` when the request is successful.
+                example: true
+              model: |
+                ```json
+                {
+                  "success": boolean
                 }
                 ```
         "default":
