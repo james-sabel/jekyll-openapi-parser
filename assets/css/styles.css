@@ -28,9 +28,16 @@ li {
     line-height: 1.8em;
 }
 
+.navbar {
+    padding: 8px 20px;
+}
+
+.navbar-text {
+    font-size: 15pt;
+}
+
 #toc {
     padding: 25px;
-    background-color: #fafafa;
 }
 
 #middle {
