@@ -42,13 +42,13 @@
             {% for method in endpoint[1] %}
                 <div class="row">
                     <div id="middle" class="col-sm-7">
-                        {% if method[0] contains "get" %}
+                        {% if method[0] == "get" %}
                             <h3><span class="method-name-box method-name-get">{{ method[0] | upcase }}</span> <span class="method-endpoint">{{ endpoint[0] }}</span></h3>
-                        {% elsif method[0] contains "post" %}
+                        {% elsif method[0] == "post" %}
                             <h3><span class="method-name-box method-name-post">{{ method[0] | upcase }}</span> <span class="method-endpoint">{{ endpoint[0] }}</span></h3>
-                        {% elsif method[0] contains "delete" %}
+                        {% elsif method[0] == "delete" %}
                             <h3><span class="method-name-box method-name-delete">{{ method[0] | upcase }}</span> <span class="method-endpoint">{{ endpoint[0] }}</span></h3>
-                        {% elsif method[0] contains "put" %}
+                        {% elsif method[0] == "put" %}
                             <h3><span class="method-name-box method-name-put">{{ method[0] | upcase }}</span> <span class="method-endpoint">{{ endpoint[0] }}</span></h3>
                         {% endif %}
                         <p>{{ method[1].description | markdownify  }}</p>
@@ -59,7 +59,7 @@
                                 <table class="table table-striped table-bordered table-hover">
                                 <thead>
                                     <tr>
-                                        <th>Name</th>
+                                        <th>Parameter</th>
                                         <th>Description</th>
                                         <th>Required?</th>
                                         <th>Type</th>
