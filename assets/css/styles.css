@@ -45,6 +45,12 @@ li {
     background-color: #fff;
 }
 
+#middle code {
+    padding: 4px;
+    border: solid 1px #dedede;
+    border-radius: 5px;
+}
+
 #sidebar {
     padding: 25px;
     background-color: #343A40;
