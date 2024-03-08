@@ -1,15 +1,22 @@
 <div class="row flex-nowrap">
     <div class="col-auto px-0 border-end" style="background-color: #fafafa;">
         <div id="toc" class="collapse collapse-horizontal show">
-            <ul>
-                <li>Item</li>
-                <li>Item</li>
-                <li>Item</li>
-                <li>Item</li>
-                <li>Item</li>
-                <li>Item</li>
-                <li>Item</li>
-            </ul>
+            <p><b>Jump to:</b></p>
+            <nav>
+                {% for endpoint in site.data.meme_generator.paths %}
+                    {% for method in endpoint[1] %}
+                        {% if method[0] == "get" %}
+                            <a href='#{{ method[0] }}{{ endpoint[0] | replace: "/", "-" | replace: "_", "-" }}'><span class="badge method-name-get">{{ method[0] }}</span> {{ endpoint[0] }}</a>
+                        {% elsif method[0] == "post" %}
+                            <a href='#{{ method[0] }}{{ endpoint[0] | replace: "/", "-" | replace: "_", "-" }}'><span class="badge method-name-post">{{ method[0] }}</span> {{ endpoint[0] }}</a>
+                        {% elsif method[0] == "delete" %}
+                            <a href='#{{ method[0] }}{{ endpoint[0] | replace: "/", "-" | replace: "_", "-" }}'><span class="badge method-name-delete">{{ method[0] }}</span> {{ endpoint[0] }}</a>
+                        {% elsif method[0] == "put" %}
+                            <a href='#{{ method[0] }}{{ endpoint[0] | replace: "/", "-" | replace: "_", "-" }}'><span class="badge method-name-put">{{ method[0] }}</span> {{ endpoint[0] }}</a>
+                        {% endif %}
+                    {% endfor %}
+                {% endfor %}
+            </nav>
         </div>
     </div>
     <div id="content" class="col">
@@ -36,13 +43,13 @@
                 <div class="row">
                     <div id="middle" class="col-sm-7">
                         {% if method[0] == "get" %}
-                            <h2><span class="method-name-box method-name-get">{{ method[0] | upcase }}</span> <span class="method-endpoint">{{ endpoint[0] }}</span></h2>
+                            <h2 id='{{ method[0] }}{{ endpoint[0] | replace: "/", "-" | replace: "_", "-" }}'><span class="badge method-name-get">{{ method[0] | upcase }}</span> <span class="method-endpoint">{{ endpoint[0] }}</span></h2>
                         {% elsif method[0] == "post" %}
-                            <h2><span class="method-name-box method-name-post">{{ method[0] | upcase }}</span> <span class="method-endpoint">{{ endpoint[0] }}</span></h2>
+                            <h2 id='{{ method[0] }}{{ endpoint[0] | replace: "/", "-" | replace: "_", "-" }}'><span class="badge method-name-post">{{ method[0] | upcase }}</span> <span class="method-endpoint">{{ endpoint[0] }}</span></h2>
                         {% elsif method[0] == "delete" %}
-                            <h2><span class="method-name-box method-name-delete">{{ method[0] | upcase }}</span> <span class="method-endpoint">{{ endpoint[0] }}</span></h2>
+                            <h2 id='{{ method[0] }}{{ endpoint[0] | replace: "/", "-" | replace: "_", "-" }}'><span class="badge method-name-delete">{{ method[0] | upcase }}</span> <span class="method-endpoint">{{ endpoint[0] }}</span></h2>
                         {% elsif method[0] == "put" %}
-                            <h2><span class="method-name-box method-name-put">{{ method[0] | upcase }}</span> <span class="method-endpoint">{{ endpoint[0] }}</span></h2>
+                            <h2 id='{{ method[0] }}{{ endpoint[0] | replace: "/", "-" | replace: "_", "-" }}'><span class="badge method-name-put">{{ method[0] | upcase }}</span> <span class="method-endpoint">{{ endpoint[0] }}</span></h2>
                         {% endif %}
                         <p>{{ method[1].description | markdownify  }}</p>
                         {% if method[1].requestBody %}

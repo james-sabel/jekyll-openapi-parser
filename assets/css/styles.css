@@ -40,6 +40,26 @@ li {
     padding: 25px;
 }
 
+#toc nav {
+    margin-left: -12px;
+}
+
+#toc a {
+    display: block;
+    padding: 12px;
+    color: #333333;
+    text-decoration: none;
+}
+
+#toc a:hover {
+    background-color: #ccc;
+}
+
+#toc a.active {
+    background-color: #ccc;
+    color: white;
+}
+
 #middle {
     padding: 25px;
     background-color: #fff;
