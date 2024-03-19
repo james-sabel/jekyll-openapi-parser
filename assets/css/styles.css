@@ -167,6 +167,10 @@ p.request-body:after {
     margin: auto;
 }
 
+.response-control {
+    margin-top: 15px;
+}
+
 #response-content,
 pre {
     font-family: "Source Code Pro", monospace;
