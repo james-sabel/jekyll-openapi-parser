@@ -83,12 +83,24 @@
                     </div>
                     <div id="sidebar" class="col">
                         <h3>Responses</h3>
+
+                        {% assign method_name = method[0] %}
+                        {% assign endpoint_name_slug = endpoint[0] | slugify: "latin" %}
+                        
+                        <select id="response-select" class="form-select form-select-sm" onchange="showResponseContent(value, '{{ method_name }}', '{{ endpoint_name_slug }}');">
+                            <option selected="selected" disabled="disabled">--- Select one ---</option>
+                            {% for code in method[1].responses %}
+                                <option value="{{ code[0] }}">{{ code[0] }}</option>
+                            {% endfor %}
+                        </select>
                         {% for code in method[1].responses %}
-                            <p style="margin-top: 10px;">{{ code[0] }} | {{ code[1].description }}</p>
                             {% for type in code[1].content %}
-                                <p>Model:</p>
-                                <div id="response-content">
-                                    <p>{{ type[1].model | markdownify }}</p>
+                                <div class="response-control {{ method_name }}-{{ endpoint_name_slug }} {{ code[0] }}-description" style="display:none;">
+                                    <p><b>Description:</b> {{ code[1].description }}</p>
+                                    <p><b>Model:</b></p>
+                                    <div id="response-content">
+                                        <p>{{ type[1].model | markdownify }}</p>
+                                    </div>
                                 </div>
                             {% endfor %}
                         {% endfor %}
