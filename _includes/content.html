@@ -97,7 +97,8 @@
                             {% for type in code[1].content %}
                                 <div class="response-control {{ method_name }}-{{ endpoint_name_slug }} {{ code[0] }}-description" style="display:none;">
 
-                                    <p><b>Description:</b> {{ code[1].description }}</p>
+                                    <h4>{{ code[0] | capitalize }}</h4>
+                                    <p><b>{{ code[1].description }}</b></p>
 
                                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                                         <li class="nav-item" role="presentation">
