@@ -81,6 +81,7 @@ paths:
                   }
                 }
                 ```
+              example: Example for `/get_memes` - `GET` - `200`
         "default":
           description: An error ocurred
           content:
@@ -101,6 +102,7 @@ paths:
                   "error_message": string
                 }
                 ```
+              example: Example for `/get_memes` - `GET` - `default`
 
   /caption_image:
     post:
@@ -227,6 +229,7 @@ paths:
                   }
                 }
                 ```
+              example: Example for `/caption_image` - `POST` - `200`
         "default":
           description: An error ocurred
           content:
@@ -247,6 +250,7 @@ paths:
                   "error_message": string
                 }
                 ```
+              example: Example for `/caption_image` - `POST` - `default`
     delete:
       description: |
         This is a **fake** method for testing endpoints with multiple methods. This API does **not** have a `DELETE` method.
@@ -282,6 +286,7 @@ paths:
                   "success": boolean
                 }
                 ```
+              example: Example for `/caption_image` - `DELETE` - `200`
         "default":
           description: An error ocurred
           content:
@@ -302,6 +307,7 @@ paths:
                   "error_message": string
                 }
                 ```
+              example: Example for `/caption_image` - `DELETE` - `default`
     put:
       description: |
         This is a **fake** method for testing endpoints with multiple methods. This API does **not** have a `PUT` method.
@@ -337,6 +343,7 @@ paths:
                   "success": boolean
                 }
                 ```
+              example: Example for `/caption_image` - `PUT` - `200`
         "default":
           description: An error ocurred
           content:
@@ -357,6 +364,7 @@ paths:
                   "error_message": string
                 }
                 ```
+              example: Example for `/caption_image` - `PUT` - `default`
 
 # Basic authentication
 components:

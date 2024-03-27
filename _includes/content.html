@@ -96,11 +96,36 @@
                         {% for code in method[1].responses %}
                             {% for type in code[1].content %}
                                 <div class="response-control {{ method_name }}-{{ endpoint_name_slug }} {{ code[0] }}-description" style="display:none;">
+
                                     <p><b>Description:</b> {{ code[1].description }}</p>
-                                    <p><b>Model:</b></p>
-                                    <div id="response-content">
-                                        <p>{{ type[1].model | markdownify }}</p>
+
+                                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link active" id="{{ method_name }}-{{ endpoint_name_slug }}-{{ code[0] }}-model-tab" data-bs-toggle="tab" data-bs-target="#{{ method_name }}-{{ endpoint_name_slug }}-{{ code[0] }}-model-tab-pane" type="button" role="tab" aria-controls="{{ method_name }}-{{ endpoint_name_slug }}-{{ code[0] }}-model-tab-pane" aria-selected="true">Model</button>
+                                        </li>
+                                        <li class="nav-item" role="presentation">
+                                            <button class="nav-link" id="{{ method_name }}-{{ endpoint_name_slug }}-{{ code[0] }}-example-tab" data-bs-toggle="tab" data-bs-target="#{{ method_name }}-{{ endpoint_name_slug }}-{{ code[0] }}-example-tab-pane" type="button" role="tab" aria-controls="{{ method_name }}-{{ endpoint_name_slug }}-{{ code[0] }}-example-tab-pane" aria-selected="false">Example</button>
+                                        </li>
+                                    </ul>
+                                    
+                                    <div class="tab-content" id="myTabContent">
+                                        <div class="tab-pane fade show active"
+                                        id="{{ method_name }}-{{ endpoint_name_slug }}-{{ code[0] }}-model-tab-pane"
+                                        role="tabpanel"
+                                        aria-labelledby="{{ method_name }}-{{ endpoint_name_slug }}-{{ code[0] }}-model-tab"
+                                        tabindex="0">
+                                            <div class="response-content">
+                                                <p>{{ type[1].model | markdownify }}</p>
+                                            </div>
+                                        </div>
+                                    
+                                        <div class="tab-pane fade" id="{{ method_name }}-{{ endpoint_name_slug }}-{{ code[0] }}-example-tab-pane" role="tabpanel" aria-labelledby="{{ method_name }}-{{ endpoint_name_slug }}-{{ code[0] }}-example-tab" tabindex="0">
+                                            <div class="response-content">
+                                                <p>{{ type[1].example | markdownify }}</p>
+                                            </div>
+                                        </div>
                                     </div>
+
                                 </div>
                             {% endfor %}
                         {% endfor %}

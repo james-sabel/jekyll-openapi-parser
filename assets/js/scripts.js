@@ -1,3 +1,7 @@
+$(document).ready(function() {
+    console.log( "ready!" );
+});
+
 function showResponseContent(code, method, endpoint) {
 
     $("#response-select").find("option:selected").each(function () {
