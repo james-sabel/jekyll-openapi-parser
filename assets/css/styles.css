@@ -169,6 +169,7 @@ p.request-body:after {
 
 .nav-link,
 .nav-link:hover {
+    padding: 2px 8px;
     color: #fff;
 }
 
