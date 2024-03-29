@@ -87,7 +87,7 @@
                         {% assign method_name = method[0] %}
                         {% assign endpoint_name_slug = endpoint[0] | slugify: "latin" %}
                         
-                        <select id="response-select" class="form-select form-select-sm" data-methodname="{{ method_name }}" data-endpointname="{{ endpoint_name_slug }}">
+                        <select class="response-select form-select form-select-sm" data-methodname="{{ method_name }}" data-endpointname="{{ endpoint_name_slug }}">
                             <option selected="selected" disabled="disabled">--- Select one ---</option>
                             {% for code in method[1].responses %}
                                 <option value="{{ code[0] }}">{{ code[0] }}</option>
