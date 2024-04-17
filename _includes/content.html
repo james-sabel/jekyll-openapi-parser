@@ -1,9 +1,12 @@
+<!-- Data file name goes here -->
+{% assign data_source = "meme_generator" %}
+
 <div class="row flex-nowrap">
     <div class="col-auto px-0 border-end" style="background-color: #fafafa;">
         <div id="toc" class="collapse collapse-horizontal show">
             <p><b>Jump to:</b></p>
             <nav>
-                {% for endpoint in site.data.meme_generator.paths %}
+                {% for endpoint in site.data.[data_source].paths %}
                     {% for method in endpoint[1] %}
                         {% if method[0] == "get" %}
                             <a href='#{{ method[0] }}-{{ endpoint[0] | slugify: "latin" }}'><span class="badge method-name-get">{{ method[0] }}</span> {{ endpoint[0] }}</a>
@@ -22,11 +25,11 @@
     <div id="content" class="col">
         <div class="row">
             <div id="middle" class="col-sm-7">
-                <h1>{{ site.data.meme_generator.info.title }} <span class="api-version-title">v{{ site.data.meme_generator.info.version }}</span></h1>
-                <p>{{ site.data.meme_generator.info.description | markdownify }}</p>
+                <h1>{{ site.data.[data_source].info.title }} <span class="api-version-title">v{{ site.data.[data_source].info.version }}</span></h1>
+                <p>{{ site.data.[data_source].info.description | markdownify }}</p>
                 <h2>Servers</h2>
                 <ul>
-                    {% for server in site.data.meme_generator.servers %}
+                    {% for server in site.data.[data_source].servers %}
                     <li>
                         <span class="server-url">{{ server.url }}</span> [{{ server.description }}]
                     </li>
@@ -38,7 +41,7 @@
             </div>
         </div>
         <span class="d-none d-lg-block">{% include section_divider.html %}</span>
-        {% for endpoint in site.data.meme_generator.paths %}
+        {% for endpoint in site.data.[data_source].paths %}
             {% for method in endpoint[1] %}
                 <div class="row">
                     <div id="middle" class="col-sm-7">

@@ -1,4 +1,7 @@
-<p><b>{{ site.data.meme_generator.info.title }}</b></p>
+<!-- Data file name goes here -->
+{% assign data_source = "meme_generator" %}
+
+<p><b>{{ site.data.[data_source].info.title }}</b></p>
 <table id="contact-info">
     <tr>
         <th>Contact:</th>
