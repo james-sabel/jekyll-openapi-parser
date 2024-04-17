@@ -1,15 +1,15 @@
 <!-- Data file name goes here -->
 {% assign data_source = "meme_generator" %}
 
-<p><b>{{ site.data.[data_source].info.title }}</b></p>
+<p><b>{{ site.data.[data_source].info.contact.name }}</b></p>
 <table id="contact-info">
     <tr>
-        <th>Contact:</th>
-        <td>general@imgflip.com</td>
+        <th>E-mail:</th>
+        <td>{{ site.data.[data_source].info.contact.email }}</td>
     </tr>
     <tr>
         <th>Website:</th>
-        <td><a href="https://imgflip.com/" target="_blank">https://imgflip.com/</a>
+        <td><a href="{{ site.data.[data_source].info.contact.url }}" target="_blank">{{ site.data.[data_source].info.contact.url }}</a></td>
     </tr>
     <tr>
         <th>License:</th>

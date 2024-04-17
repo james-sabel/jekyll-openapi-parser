@@ -6,6 +6,10 @@ info:
     The Imgflip API uses a RESTful JSON interface. Request parameters are standard HTTP form urlencoded parameters, and return data is JSON.
 
     The base version of the API is free. You can upgrade to our Premium API to unlock advanced features. Requests to the free version of the API do not have a hard limit, but may be throttled or blocked if you start doing crazy things or abusing the API. The Premium API has a base cost of $9.99 per month and includes some Premium requests each month (details below). After that, each type of Premium request has a small per-request cost. Note that the free API endpoints are still free if you have API Premium, you'll only be charged for the Premium-only features.
+  contact:
+    name: Imgflip
+    url: https://imgflip.com/
+    email: general@imgflip.com
 
 servers:
   - url: https://api.imgflip.com
