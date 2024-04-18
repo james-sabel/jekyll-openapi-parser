@@ -1,0 +1,18 @@
+<div id="toc" class="collapse collapse-horizontal show">
+    <p><b>Jump to:</b></p>
+    <nav>
+        {% for endpoint in site.data.[data_source].paths %}
+            {% for method in endpoint[1] %}
+                {% if method[0] == "get" %}
+                    <a href='#{{ method[0] }}-{{ endpoint[0] | slugify: "latin" }}'><span class="badge method-name-get">{{ method[0] }}</span> {{ endpoint[0] }}</a>
+                {% elsif method[0] == "post" %}
+                    <a href='#{{ method[0] }}-{{ endpoint[0] | slugify: "latin" }}'><span class="badge method-name-post">{{ method[0] }}</span> {{ endpoint[0] }}</a>
+                {% elsif method[0] == "delete" %}
+                    <a href='#{{ method[0] }}-{{ endpoint[0] | slugify: "latin" }}'><span class="badge method-name-delete">{{ method[0] }}</span> {{ endpoint[0] }}</a>
+                {% elsif method[0] == "put" %}
+                    <a href='#{{ method[0] }}-{{ endpoint[0] | slugify: "latin" }}'><span class="badge method-name-put">{{ method[0] }}</span> {{ endpoint[0] }}</a>
+                {% endif %}
+            {% endfor %}
+        {% endfor %}
+    </nav>
+</div>

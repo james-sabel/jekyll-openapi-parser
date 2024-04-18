@@ -37,6 +37,10 @@ li {
     font-size: 15pt;
 }
 
+#toc-container {
+    background-color: #fafafa;
+}
+
 #toc {
     padding: 25px;
 }

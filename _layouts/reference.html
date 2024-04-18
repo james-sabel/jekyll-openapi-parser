@@ -22,10 +22,20 @@
 </head>
 
 <body>
+  <!-- Data file name goes here -->
+  {% assign data_source = "meme_generator" %}
+
   {% include topnav.html %}
   <div class="container-fluid">
-    {% include content.html %}
-    <!-- {% include footer.html %} -->
+    <div class="row flex-nowrap">
+      <div id="toc-container" class="col-auto px-0 border-end">
+        {% include table_of_contents.html %}
+      </div>
+      <div id="content" class="col">
+        {% include api_specs.html %}
+      </div>
+  </div>
+  <!-- {% include footer.html %} -->
   </div>
 </body>
 
