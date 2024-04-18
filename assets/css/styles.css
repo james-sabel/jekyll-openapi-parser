@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
 
+
+/*                       */
+/* HTML's general styles */
+/*                       */
+
 body {
     font-family: "Roboto", sans-serif;
     font-weight: 400;
@@ -28,6 +33,11 @@ p {
 li {
     line-height: 1.8em;
 }
+
+
+/*                                    */
+/* Navbar and Table Of Contents (TOC) */
+/*                                    */
 
 .navbar {
     padding: 8px 20px;
@@ -64,6 +74,11 @@ li {
     background-color: #ccc;
     color: white;
 }
+
+
+/*              */
+/* CONTENT AREA */
+/*              */
 
 #middle {
     padding: 25px;
@@ -133,6 +148,13 @@ li {
     font-size: 11pt;
     font-weight: bold;
     color: #fff;
+}
+
+.method-name-get,
+.method-name-post,
+.method-name-delete,
+.method-name-put {
+    min-width: 50px;
 }
 
 .method-name-get {
