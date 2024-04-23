@@ -1,8 +1,10 @@
+// Calls functions after the document is loaded and ready
 $(document).ready(function () {
     showResponseContent();
+    themeToggle();
 });
 
-// Shows response content when option is selected in the "Responses" panel
+// Shows response content according to the option selected in the "Responses" panel
 function showResponseContent() {
     $(".response-select").on("change", function () {
         var selectedCode = $(this).val();
@@ -15,4 +17,13 @@ function showResponseContent() {
             }
         });
     });
+}
+
+function themeToggle() {
+    $("#toggle-theme").on("click", function () {
+        $("*").toggleClass("dark-mode");
+        $(".navbar").toggleClass("bg-body-tertiary");
+        $(".navbar").toggleClass("bg-dark");
+        $("table").toggleClass("table-dark");
+    })
 }
