@@ -32,8 +32,9 @@
                 <p>{{ method[1].description | markdownify  }}</p>
                 {% if method[1].requestBody %}
                     <p class="request-body">REQUEST BODY</p>
+                    {{ method[1].requestBody.description | markdownify }}
                     {% for content in method[1].requestBody.content %}
-                        <p>Content-Type: <code>{{ content[0] }}</code></p>
+                        <p><b>Content-Type:</b> <code>{{ content[0] }}</code></p>
                         <table class="table table-striped table-bordered table-hover">
                         <thead>
                             <tr>
