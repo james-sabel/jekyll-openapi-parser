@@ -3,5 +3,11 @@
                         class="border rounded-3 text-decoration-none"
                         style="padding: 3px 5px 1px; color: #333333; font-size: 12pt;"><i class="lni lni-menu"></i></a>
                 {{ site.data.meme_generator.info.title }}</span>
-        <button id="toggle-theme">Toggle dark mode</button>
+        <div class="light-dark-mode-container">
+                <span class="light-dark-mode-text">Light</span>
+                <div class="form-check form-switch" title="Toggle between light and dark mode">
+                        <input id="toggle-theme" class="form-check-input" type="checkbox" role="switch"
+                                id="flexSwitchCheckDefault">
+                </div><span class="light-dark-mode-text">Dark</span>
+        </div>
 </nav>

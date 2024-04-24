@@ -48,6 +48,7 @@ li {
 }
 
 #toc-container {
+    transition: background-color 0.2s ease;
     background-color: #fafafa;
 }
 
@@ -81,6 +82,7 @@ li {
 /*              */
 
 #middle {
+    transition: background-color 0.2s ease;
     padding: 25px;
     background-color: #fff;
 }
@@ -216,9 +218,22 @@ pre {
     font-size: 10pt;
 }
 
+.light-dark-mode-container {
+    display: flex;
+}
+
+.form-switch {
+    margin-left: 10px;
+    margin-right: 5px;
+}
+
 /*                      */
 /* DARK MODE VARIATIONS */
 /*                      */
+
+.dark-mode {
+    transition: background-color 0.2s ease;
+}
 
 h2 .dark-mode,
 h3 .dark-mode,
@@ -235,6 +250,10 @@ nav span.dark-mode {
 
 .navbar-text .dark-mode {
     background-color: #333333;
+}
+
+.light-dark-mode-text .dark-mode {
+    color: #fff;
 }
 
 #toc-container.dark-mode {
@@ -260,7 +279,9 @@ nav span.dark-mode {
     color: #fff;
 }
 
-
+#sidebar.dark-mode {
+    background-color: #343A40;
+}
 
 code.dark-mode {
     color: lightpink;
