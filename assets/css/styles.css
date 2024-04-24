@@ -259,19 +259,20 @@ nav span.dark-mode {
 #toc-container.dark-mode {
     color: #fff;
     background-color: #343A40;
+    border-right-color: #666666 !important;
+}
 
-    a {
-        color: #fff;
-    }
+#toc-container.dark-mode a {
+    color: #fff;
+}
 
-    a:hover {
-        background-color: #212529;
-    }
+#toc-container.dark-mode a:hover {
+    background-color: #212529;
+}
 
-    a.active {
-        background-color: #333333;
-        color: #000;
-    }
+#toc-container.dark-mode a.active {
+    background-color: #333333;
+    color: #000;
 }
 
 #middle.dark-mode {
