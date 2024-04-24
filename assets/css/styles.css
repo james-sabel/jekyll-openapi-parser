@@ -34,6 +34,25 @@ li {
     line-height: 1.8em;
 }
 
+blockquote {
+    padding: 5px 10px;
+    border-radius: 8px;
+    background-color: #D9534F;
+    color: #fff;
+}
+
+blockquote p {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+blockquote a,
+blockquote a:hover,
+blockquote a:visited,
+blockquote a:active {
+    color: #fff;
+}
+
 
 /*                                    */
 /* Navbar and Table Of Contents (TOC) */
@@ -243,6 +262,14 @@ h6 .dark-mode {
     color: #fff;
 }
 
+a.dark-mode {
+    color: #00BFFF;
+}
+
+blockquote a.dark-mode {
+    color: #fff;
+}
+
 .navbar-text .dark-mode,
 nav span.dark-mode {
     color: #fff;
@@ -284,7 +311,7 @@ nav span.dark-mode {
     background-color: #343A40;
 }
 
-code.dark-mode {
+#middle code.dark-mode {
     color: lightpink;
     background-color: #2C3034;
 }
