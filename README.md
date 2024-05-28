@@ -16,6 +16,8 @@ This is a test project and it currently doesn't have full OAS support. (See [Tem
 
 1. View the reference documentation website at `http://localhost:4000`.
 
+![Screenshot of generated documentation](assets/img/generated-website-preview.png "Screenshot of generated documentation")
+
 ## Requirements
 
 * **Ruby with DevKit**
